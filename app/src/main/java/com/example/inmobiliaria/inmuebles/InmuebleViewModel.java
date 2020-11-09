@@ -49,5 +49,16 @@ public class InmuebleViewModel extends AndroidViewModel {
         Inmueble inmuebleEditado = inmueble.getValue();
         inmuebleEditado.setEstado(!inmuebleEditado.isEstado());
         Call<Inmueble> callInmueble = ApiClient.getMyApiClient().putInmueble(token, inmuebleEditado);
+        callInmueble.enqueue(new Callback<Inmueble>() {
+            @Override
+            public void onResponse(Call<Inmueble> call, Response<Inmueble> response) {
+                Toast.makeText(context, "Disponibilidad editada", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Inmueble> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
     }

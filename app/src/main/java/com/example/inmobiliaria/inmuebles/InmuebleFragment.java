@@ -65,6 +65,7 @@ public class InmuebleFragment extends Fragment {
         tvPrecio = view.findViewById(R.id.etPrecio);
         cbEstado = view.findViewById(R.id.cbEstado);
         ivImagenInmueble = view.findViewById(R.id.ivImagenInmueble);
+        btCambiarDisponibilidad = view.findViewById(R.id.btCambiarDisponibilidad);
        // btAgregarFoto = view.findViewById(R.id.btAgregarFoto);
         inmuebleViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(InmuebleViewModel.class);
         inmuebleViewModel.getInmueble().observe(getActivity(), new Observer<Inmueble>() {
