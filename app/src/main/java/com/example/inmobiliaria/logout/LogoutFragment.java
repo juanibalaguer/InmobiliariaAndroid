@@ -1,5 +1,7 @@
 package com.example.inmobiliaria.logout;
 
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.AlertDialog;
@@ -23,7 +25,7 @@ public class LogoutFragment extends Fragment {
     public static LogoutFragment newInstance() {
         return new LogoutFragment();
     }
-
+    private LogOutViewModel logOutViewModel;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -33,13 +35,14 @@ public class LogoutFragment extends Fragment {
     }
 
     public void cerrarSesión() {
+        logOutViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(LogOutViewModel.class);
         new AlertDialog.Builder(getContext(), R.style.AlertDialogTheme)
                 .setTitle("Cierre de sesión")
                 .setMessage("Está seguro de que desea cerrar la sesión?")
                 .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        // Borrar shared preferences
+                        logOutViewModel.cerrarSesion();
                         System.exit(0);
                     }
                 })

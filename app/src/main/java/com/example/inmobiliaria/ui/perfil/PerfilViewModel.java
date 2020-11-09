@@ -53,7 +53,6 @@ public class PerfilViewModel extends AndroidViewModel {
                         editor.putString("apellido", bodyPropietario.getApellido());
                         editor.putString("dni", bodyPropietario.getDni());
                         editor.putString("email", bodyPropietario.getEmail());
-                        editor.putString("contraseña", bodyPropietario.getContraseña());
                         editor.putString("telefono", bodyPropietario.getTelefono());
                         editor.commit();
                         mutablePropietario.setValue(bodyPropietario);
