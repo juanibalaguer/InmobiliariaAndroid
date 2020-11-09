@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Configuracion.setRuta("http://192.168.0.106:45465/");
+        Configuracion.setRuta("http://192.168.0.106:45455/");
         setContentView(R.layout.activity_login);
         inicializar();
     }

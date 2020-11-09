@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.inmobiliaria.R;
 import com.example.inmobiliaria.modelo.Inmueble;
 import com.example.inmobiliaria.request.ApiClient;
 
@@ -19,6 +20,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.Navigation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,7 +54,19 @@ public class InmuebleViewModel extends AndroidViewModel {
         callInmueble.enqueue(new Callback<Inmueble>() {
             @Override
             public void onResponse(Call<Inmueble> call, Response<Inmueble> response) {
-                Toast.makeText(context, "Disponibilidad editada", Toast.LENGTH_LONG).show();
+                if(response.isSuccessful()) {
+                    Toast.makeText(context, "Disponibilidad editada", Toast.LENGTH_LONG).show();
+                } else {
+                    try {
+                        Log.d("Salida: ", response.errorBody().toString());
+                        Log.d("Salida: ", response.message());
+                        Log.d("Salida: ", response.errorBody().string());
+                        Toast.makeText(context, response.errorBody().string(), Toast.LENGTH_LONG);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
 
             @Override
