@@ -74,8 +74,6 @@ public class PerfilFragment extends Fragment {
                 etDNI.setEnabled(true);
                 etNombre.setEnabled(true);
                 etApellido.setEnabled(true);
-                etEmail.setEnabled(true);
-                etContraseña.setEnabled(true);
                 etTelefono.setEnabled(true);
 
             }
@@ -96,8 +94,6 @@ public class PerfilFragment extends Fragment {
                 etDNI.setEnabled(false);
                 etNombre.setEnabled(false);
                 etApellido.setEnabled(false);
-                etEmail.setEnabled(true);
-                etContraseña.setEnabled(false);
                 etTelefono.setEnabled(false);
 
             }
