@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/perfilFragment"
+            android:icon="@drawable/perfil"
+            android:title="@string/Perfil" />
+        <item
+            android:id="@+id/inmueblesFragment"
+            android:icon="@drawable/inmuebles"
+            android:title="@string/Inmuebles" />
+        <item
+            android:id="@+id/inquilinosFragment"
+            android:icon="@drawable/inquilinos"
+            android:title="@string/Inquilinos" />
+        <item
+            android:id="@+id/contratosFragment"
+            android:icon="@drawable/contratos"
+            android:title="@string/Contratos" />
+        <item
+            android:id="@+id/pagosFragment"
+            android:icon="@drawable/pagos"
+            android:title="@string/Pagos" />
+        <item
+            android:id="@+id/logoutFragment"
+            android:icon="@drawable/logout"
+            android:title="@string/Logout" />
+
+    </group>
+</menu>
